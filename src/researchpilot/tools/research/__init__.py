@@ -186,7 +186,7 @@ class TavilySearchTools:
 
         return compacted
 
-    def web_search(self, query: str, max_results: int = 5) -> list[dict]:
+    def web_search(self, query: str, max_results: int = 5) -> list[dict[str, Any]]:
         """Perform a web search using the Tavily API."""
         try:
             search_results = self.client.search(query, max_results=max_results)

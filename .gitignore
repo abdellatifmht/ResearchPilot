@@ -6,6 +6,6 @@ __pycache__
 
 *.pyc
 
-*.txt
-
 .ruff_cache
+
+reports/

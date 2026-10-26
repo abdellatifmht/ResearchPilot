@@ -35,6 +35,8 @@ def main():
             for fact in atomic_facts[:5]:
                 if isinstance(fact, dict):
                     print(f"- {fact.get('statement', '')}")
+                    print(f"  Category: {fact.get('category', '')}")
+                    print(f"  Source URLs: {', '.join(fact.get('source_urls', []))}")
         else:
             print("No atomic facts available.")
         
@@ -46,6 +48,13 @@ def main():
                     print(f"- {contradiction.get('statement', '')}")
         else:
             print("\nNo contradictions available.")
+
+        path = result.get("export_path")
+        if path:
+            print(f"\nReport exported to: {path}")
+        else:
+            print("\nNo report export path available.")
+
     else:
         print(result)
 
